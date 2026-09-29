@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("form").forEach(form=>{form.addEventListener("submit",()=>{const b=form.querySelector("button[type=submit]");if(b&&form.action.includes("generate-workout")){b.disabled=true;b.textContent="Generating your plan..."}})})});

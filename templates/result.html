@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="profile card"><h1>Your FitBuddy Plan</h1><p><b>{{ user.username }}</b> • {{ user.age }} years • {{ user.weight }} kg • {{ user.goal }} • {{ user.intensity }}</p></div>
+<section class="card"><h2>7-Day Workout Plan</h2><pre class="plan">{{ plan.updated_plan or plan.original_plan }}</pre></section>
+<section class="card"><h2>Nutrition & Recovery Tip</h2><p>{{ plan.nutrition_tip }}</p></section>
+<section class="card"><h2>Improve this plan</h2>
+<form method="post" action="/submit-feedback"><input type="hidden" name="user_id" value="{{ user.user_id }}">
+<textarea name="feedback" rows="5" maxlength="2000" placeholder="Example: Reduce leg volume and add more recovery." required></textarea>
+<button type="submit">Update Plan</button></form></section>
+<a class="button" href="/">Create another plan</a>
+{% endblock %}

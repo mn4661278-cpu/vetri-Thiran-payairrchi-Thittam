@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>All Users</h1>
+<div class="card table-wrap"><table><tr><th>User</th><th>Profile</th><th>Goal</th><th>Plan</th><th>Action</th></tr>
+{% for row in rows %}<tr><td>{{ row.user.user_id }}<br>{{ row.user.username }}</td><td>{{ row.user.age }} / {{ row.user.weight }} kg</td><td>{{ row.user.goal }}<br>{{ row.user.intensity }}</td><td>{% if row.plan %}#{{ row.plan.id }}{% else %}None{% endif %}</td><td><form method="post" action="/admin/delete-user"><input type="hidden" name="user_id" value="{{ row.user.user_id }}"><input type="hidden" name="password" value="{{ password }}"><button class="danger">Delete</button></form></td></tr>{% endfor %}
+</table></div>
+{% endblock %}

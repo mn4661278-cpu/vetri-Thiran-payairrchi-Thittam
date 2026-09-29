@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ title|default("FitBuddy") }}</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<nav><a class="logo" href="/">FitBuddy</a><div><a href="/">Home</a><a href="/docs">API Docs</a><a href="/view-all-users">Admin</a></div></nav>
+<main>{% block content %}{% endblock %}</main>
+<footer>FitBuddy • AI fitness planning demo. General information only.</footer>
+<script src="/static/js/app.js"></script>
+</body></html>
